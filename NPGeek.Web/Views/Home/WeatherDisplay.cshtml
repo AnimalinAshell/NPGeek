@@ -1,5 +1,7 @@
 ﻿@model IList<NPGeek.Web.Models.WeatherModel>
 
+<button value="cel">Celcius</button>
+<button value="fahr">Fahrenheit</button>
 
 @foreach (var weather in Model)
 {
@@ -11,8 +13,48 @@
 	{
 		<img src="~/Content/@(weather.Forecast).png" alt="Forecast" />
 	}
-	<li>@weather.Low</li>
-	<li>@weather.High</li>
-	<li>@weather.Forecast</li>
+	if (Session["convert"].ToString() == "fahr")
+	{
+		<p>@weather.Low</p>
+		<p>@weather.High</p>
+		<p>@weather.Forecast</p>
+	}
+	else
+	{
+		<p>@(((weather.Low) - 32) * 5/9)</p>
+		<p>@(((weather.High) - 32) * 5/9)</p>
+		<p>@weather.Forecast</p>
+	}
+
+	if (weather.Forecast == "snow")
+	{
+		<p>Recommendation: Pack snowshoes</p>
+	}
+	else if (weather.Forecast == "rain")
+	{
+		<p>Recommendation: Pack rain gear and waterproof shoes</p>
+	}
+	else if (weather.Forecast == "thunderstorms")
+	{
+		<p>Recommendation: Seek shelter and avoid hiking on exposed ridges</p>
+	}
+	else if (weather.Forecast == "sunny")
+	{
+		<p>Recommendation: Pack some sunblock</p>
+	}
+
+	if (weather.High >= 75)
+	{
+		<p>Recommendation: Bring an extra gallon of water</p>
+	}
+
+	if (Math.Abs(weather.High - weather.Low) > 20)
+	{
+		<p>Recommendation: Wear breathable layers</p>
+	}
+	if (weather.Low < 20)
+	{
+		<p>Recommendation: Be careful of extreme cold</p>
+	}
 }
 
