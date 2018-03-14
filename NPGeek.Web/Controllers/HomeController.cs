@@ -1,4 +1,6 @@
-﻿using System;
+﻿using NPGeek.Web.DAL;
+using NPGeek.Web.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -8,26 +10,23 @@ namespace NPGeek.Web.Controllers
 {
     public class HomeController : Controller
     {
+
+        IParkDAL dal;
+        public HomeController(IParkDAL dal)
+        {
+            this.dal = dal;
+        }
+
         // GET: Home
-        public ActionResult HomePage()
+        public ActionResult Index()
         {
-            return View("HomePage");
+            List<ParkModel> list = dal.GetAllParks();
+            return View("Index", list);
         }
 
-        public ActionResult DetailPage()
+        public ActionResult Detail(ParkModel model)
         {
-            return View("DetailPage");
+            return View("Detail", model);
         }
-
-        public ActionResult Survey()
-        {
-            return View("Survey");
-        }
-
-        public ActionResult FavoriteParks()
-        {
-            return View("FavoriteParks");
-        }
-
     }
 }

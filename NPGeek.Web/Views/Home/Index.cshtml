@@ -1,0 +1,12 @@
+﻿@model IList<NPGeek.Web.Models.ParkModel>
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>HomePage</h2>
+
+@foreach (var park in Model)
+{
+	<p>@park.ParkName</p>
+}
+
