@@ -1,10 +1,18 @@
-﻿@model NPGeek.Web.Models.WeatherModel
+﻿@model IList<NPGeek.Web.Models.WeatherModel>
 
-<ul>
-    @foreach (var weather in Model)
-    {
-        <li>@weather.Low</li>
-        <li>@weather.High</li>
-        <li>@weather.Forecast</li>
-    }
-</ul>
+
+@foreach (var weather in Model)
+{
+	if (weather.Forecast == "partly cloudy")
+	{
+		<img src="~/Content/partlyCloudy.png" alt="Forecast" />
+	}
+	else
+	{
+		<img src="~/Content/@(weather.Forecast).png" alt="Forecast" />
+	}
+	<li>@weather.Low</li>
+	<li>@weather.High</li>
+	<li>@weather.Forecast</li>
+}
+

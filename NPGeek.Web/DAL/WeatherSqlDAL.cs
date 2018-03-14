@@ -41,7 +41,7 @@ namespace NPGeek.Web.DAL
             return new WeatherModel()
             {
                 ParkCode = Convert.ToString(reader["parkCode"]),
-                Day = Convert.ToInt32(reader["fiveDayForcastValue"]),
+                Day = Convert.ToInt32(reader["fiveDayForecastValue"]),
                 Low = Convert.ToInt32(reader["low"]),
                 High = Convert.ToInt32(reader["high"]),
                 Forecast = Convert.ToString(reader["forecast"])
