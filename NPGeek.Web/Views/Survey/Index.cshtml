@@ -1,7 +1,17 @@
-﻿
+﻿@model IList<NPGeek.Web.Models.SurveyModel>
+
 @{
     ViewBag.Title = "Index";
 }
 
 <h2>Index</h2>
+
+@foreach (var surveys in Model)
+{
+    <p>@surveys.ParkCode</p>
+    <p>@surveys.EmailAddress</p>
+    <p>@surveys.State</p>
+    <p>@surveys.ActivityLevel</p>
+}
+
 

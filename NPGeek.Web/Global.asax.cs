@@ -32,6 +32,7 @@ namespace NPGeek.Web
             // Map Interfaces to Classes
             //kernel.Bind<interface>().To<class>();
             kernel.Bind<IParkDAL>().To<ParkSqlDAL>().WithConstructorArgument("connectionString", connectionString);
+            kernel.Bind<ISurveyDAL>().To<SurveySqlDAL>().WithConstructorArgument("connectionString", connectionString);
             return kernel;
         }
     }
