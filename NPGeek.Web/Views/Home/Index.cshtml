@@ -8,5 +8,9 @@
 @foreach (var park in Model)
 {
 	<p>@park.ParkName</p>
+    <form action="@Url.Action("Detail")" method="get">
+        <input type="image" src="~/Content/@(park.ParkCode).jpg" value="@park.ParkCode" name="parkCode" />
+    </form>
+    <p>@park.ParkDescription</p>
 }
 

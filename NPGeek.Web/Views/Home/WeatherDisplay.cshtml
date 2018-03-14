@@ -1,0 +1,10 @@
+﻿@model NPGeek.Web.Models.WeatherModel
+
+<ul>
+    @foreach (var weather in Model)
+    {
+        <li>@weather.Low</li>
+        <li>@weather.High</li>
+        <li>@weather.Forecast</li>
+    }
+</ul>

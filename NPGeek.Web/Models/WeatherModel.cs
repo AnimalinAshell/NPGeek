@@ -11,6 +11,6 @@ namespace NPGeek.Web.Models
         public int Day { get; set; }
         public int Low { get; set; }
         public int High { get; set; }
-        public int Forecast { get; set; }
+        public string Forecast { get; set; }
     }
 }

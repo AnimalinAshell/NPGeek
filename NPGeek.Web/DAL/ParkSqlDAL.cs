@@ -37,6 +37,25 @@ namespace NPGeek.Web.DAL
             return parks;
         }
 
+        public ParkModel GetPark(string parkCode)
+        {
+            ParkModel model = new ParkModel();
+            
+            using(SqlConnection conn = new SqlConnection(connectionString))
+            {
+                conn.Open();
+
+                SqlCommand cmd = new SqlCommand("SELECT * FROM park WHERE parkCode = @parkCode", conn);
+                cmd.Parameters.AddWithValue("@parkCode", parkCode);
+                SqlDataReader reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    model = MapRowToList(reader);
+                }
+            }
+            return model;
+        }
+
         private ParkModel MapRowToList(SqlDataReader reader)
         {
             return new ParkModel()

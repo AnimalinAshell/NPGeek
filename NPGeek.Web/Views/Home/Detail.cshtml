@@ -1,7 +1,27 @@
-﻿
+﻿@model NPGeek.Web.Models.ParkModel
 @{
     ViewBag.Title = "Detail";
 }
 
 <h2>Detail</h2>
 
+<img src="~/Content/@(Model.ParkCode).jpg" />
+<p>@Model.ParkName</p>
+<p>@Model.State</p>
+<p>@Model.Acreage</p>
+<p>@Model.Elevation</p>
+<p>@Model.MilesOfTrail</p>
+<p>@Model.NumberOfCampsites</p>
+<p>@Model.Climate</p>
+<p>@Model.YearFounded</p>
+<p>@Model.AnnualVisitorCount</p>
+<p>@Model.InspirationalQuote</p>
+<p>@Model.QuoteSource</p>
+<p>@Model.ParkDescription</p>
+<p>@Model.EntryFee</p>
+<p>@Model.NumberOfAnimalSpecies</p>
+
+
+<div>
+    @Html.Action("WeatherDisplay")
+</div>

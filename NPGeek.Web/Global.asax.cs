@@ -33,6 +33,7 @@ namespace NPGeek.Web
             //kernel.Bind<interface>().To<class>();
             kernel.Bind<IParkDAL>().To<ParkSqlDAL>().WithConstructorArgument("connectionString", connectionString);
             kernel.Bind<ISurveyDAL>().To<SurveySqlDAL>().WithConstructorArgument("connectionString", connectionString);
+            kernel.Bind<IWeatherDAL>().To<WeatherSqlDAL>().WithConstructorArgument("connectionString", connectionString);
             return kernel;
         }
     }
