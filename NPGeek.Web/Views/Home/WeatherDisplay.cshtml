@@ -1,48 +1,64 @@
 ﻿@model IList<NPGeek.Web.Models.WeatherModel>
 
-<button value="cel">Celcius</button>
-<button value="fahr">Fahrenheit</button>
+@*<form action="@Url.Action("Detail", "Home")" method="get">
+    <button name="TempPick" value="fah">Fahrenheit</button>
+    <button name="TempPick" value="cel">Celsius</button>
+</form>*@
 
-@foreach (var weather in Model)
-{
-	if (weather.Forecast == "partly cloudy")
-	{
-		<img src="~/Content/partlyCloudy.png" alt="Forecast" />
-	}
-	else
-	{
-		<img src="~/Content/@(weather.Forecast).png" alt="Forecast" />
-	}
+<div>
+    @foreach (var weather in Model)
+    {
 
-	if (weather.Forecast == "snow")
-	{
-		<p>Recommendation: Pack snowshoes</p>
-	}
-	else if (weather.Forecast == "rain")
-	{
-		<p>Recommendation: Pack rain gear and waterproof shoes</p>
-	}
-	else if (weather.Forecast == "thunderstorms")
-	{
-		<p>Recommendation: Seek shelter and avoid hiking on exposed ridges</p>
-	}
-	else if (weather.Forecast == "sunny")
-	{
-		<p>Recommendation: Pack some sunblock</p>
-	}
+        if (weather.Forecast == "partly cloudy")
+        {
+            <img src="~/Content/partlyCloudy.png" alt="Forecast" />
+        }
+        else
+        {
+            <img src="~/Content/@(weather.Forecast).png" alt="Forecast" />
+        }
 
-	if (weather.High >= 75)
-	{
-		<p>Recommendation: Bring an extra gallon of water</p>
-	}
+        if (weather.TempPicker == "far")
+        {
+            <p>High @weather.High F</p>
+            <p>Low @weather.Low F</p>
+        }
+        else if (weather.TempPicker == "cel")
+        {
+            <p>High @(((weather.High) - 32) * 5/9) C</p>
+            <p>Low @(((weather.Low) - 32) * 5 / 9) C </p>
+        }
 
-	if (Math.Abs(weather.High - weather.Low) > 20)
-	{
-		<p>Recommendation: Wear breathable layers</p>
-	}
-	if (weather.Low < 20)
-	{
-		<p>Recommendation: Be careful of extreme cold</p>
-	}
-}
+        if (weather.Forecast == "snow")
+        {
+            <p>Recommendation: Pack snowshoes</p>
+        }
+        else if (weather.Forecast == "rain")
+        {
+            <p>Recommendation: Pack rain gear and waterproof shoes</p>
+        }
+        else if (weather.Forecast == "thunderstorms")
+        {
+            <p>Recommendation: Seek shelter and avoid hiking on exposed ridges</p>
+        }
+        else if (weather.Forecast == "sunny")
+        {
+            <p>Recommendation: Pack some sunblock</p>
+        }
 
+        if (weather.High >= 75)
+        {
+            <p>Recommendation: Bring an extra gallon of water</p>
+        }
+
+        if (Math.Abs(weather.High - weather.Low) > 20)
+        {
+            <p>Recommendation: Wear breathable layers</p>
+        }
+        if (weather.Low < 20)
+        {
+            <p>Recommendation: Be careful of extreme cold</p>
+        }
+
+    }
+</div>

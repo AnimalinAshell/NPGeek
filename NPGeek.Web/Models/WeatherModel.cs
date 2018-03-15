@@ -12,5 +12,6 @@ namespace NPGeek.Web.Models
         public int Low { get; set; }
         public int High { get; set; }
         public string Forecast { get; set; }
+        public string TempPicker { get; set; } = "far";
     }
 }
