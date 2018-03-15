@@ -22,9 +22,11 @@
 <p>@Model.NumberOfAnimalSpecies</p>
 
 
-<form action="@Url.Action("Detail", "Home",)" method="post">
-        <input tyepe="radio" name="session" value="fah">Fahrenheit</input>
-        <button name="session" value="cel">Celsius</button>
+<form action="@Url.Action("TempChoice", "Home")" method="post">
+	<select name="tempChoice">
+		<option value="F">Fahrenheit</option>
+		<option value="C">Celcius</option>
+	</select>
 </form>
 
 

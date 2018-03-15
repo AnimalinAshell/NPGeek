@@ -29,11 +29,12 @@ namespace NPGeek.Web.Controllers
         public ActionResult Detail(string parkCode)
         {
             ParkModel model = dal.GetPark(parkCode);
-            return View("Detail", model);
+            string tempatureChoice = getTempatureChoice();
+            return View("Detail", model, tempatureChoice);
         }
 
         [HttpPost]
-        public ActionResult Detail(string tempChoice)
+        public ActionResult TempChoice(string tempChoice)
         {
             Session["TempChoice"] = tempChoice;
             return RedirectToAction("Detail");
@@ -46,20 +47,20 @@ namespace NPGeek.Web.Controllers
             return PartialView(weather);
         }
 
-        private string CelFah(string tempChoice)
+        private string getTempatureChoice()
         {
-            tempChoice = "F";
+            string tempChoice = "F";
 
             if (Session["TempChoice"] == null)
             {
-                
-                Session["TempChoice"] = "F";
+                Session["TempChoice"] = tempChoice;
             }
             else 
             {
                 tempChoice = (string)Session["TempChoice"];
             }
-            
+
+            return tempChoice;
         }
 
 
