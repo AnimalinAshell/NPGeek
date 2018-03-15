@@ -21,6 +21,14 @@
 <p>@Model.EntryFee</p>
 <p>@Model.NumberOfAnimalSpecies</p>
 
+
+<form action="@Url.Action("Detail", "Home",)" method="post">
+        <input tyepe="radio" name="session" value="fah">Fahrenheit</input>
+        <button name="session" value="cel">Celsius</button>
+</form>
+
+
+
 <div>
     @Html.Action("WeatherDisplay")
 </div>

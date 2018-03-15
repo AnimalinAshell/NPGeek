@@ -32,10 +32,39 @@ namespace NPGeek.Web.Controllers
             return View("Detail", model);
         }
 
+        [HttpPost]
+        public ActionResult Detail(string tempChoice)
+        {
+            Session["TempChoice"] = tempChoice;
+            return RedirectToAction("Detail");
+        }
+    
+
         public ActionResult WeatherDisplay(string parkCode)
         {
             List<WeatherModel> weather = dalWeather.GetWeather(parkCode);
             return PartialView(weather);
         }
+
+        private string CelFah(string tempChoice)
+        {
+            tempChoice = "F";
+
+            if (Session["TempChoice"] == null)
+            {
+                
+                Session["TempChoice"] = "F";
+            }
+            else 
+            {
+                tempChoice = (string)Session["TempChoice"];
+            }
+            
+        }
+
+
+
+
+
     }
 }
