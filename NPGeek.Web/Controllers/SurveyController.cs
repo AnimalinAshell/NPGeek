@@ -32,7 +32,7 @@ namespace NPGeek.Web.Controllers
         public ActionResult FavoritesPage()
         {
             List<SurveyModel> list = dal.GetAllParksInOrderByCount();
-            return View("FavoritesPage", list); // break here coe back here after lunch
+            return View("FavoritesPage", list); 
         }
 
     }

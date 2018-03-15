@@ -20,10 +20,11 @@ namespace NPGeek.Web.DAL
         {
             List<SurveyModel> survey = new List<SurveyModel>();
 
-            string query = "SELECT parkCode, COUNT(surveyId) as TotalSurvey FROM survey_result " +
-                           "GROUP BY parkCode " +
-                           "ORDER BY TotalSurvey DESC; ";
-           
+            //string query = "SELECT parkCode, COUNT(surveyId) as TotalSurvey FROM survey_result " +
+            //               "GROUP BY parkCode " +
+            //               "ORDER BY TotalSurvey DESC; ";
+            string query = "SELECT survey_result.parkCode, COUNT(survey_result.surveyId) as TotalSurvey, parkName FROM survey_result JOIN park ON survey_result.parkCode = park.parkCode GROUP BY survey_result.parkCode, parkName ORDER BY TotalSurvey DESC;";
+
             using (SqlConnection conn = new SqlConnection(connectionString))
             {
                 conn.Open();
@@ -73,7 +74,8 @@ namespace NPGeek.Web.DAL
             return new SurveyModel()
             {
                 ParkCode = Convert.ToString(reader["parkCode"]),
-                SurveyRank = Convert.ToInt32(reader["TotalSurvey"]) 
+                SurveyRank = Convert.ToInt32(reader["TotalSurvey"]),
+                ParkName = Convert.ToString(reader["parkName"])
             };
         }
     }
