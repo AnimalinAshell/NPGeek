@@ -171,6 +171,7 @@
     <Content Include="Views\Survey\Index.cshtml" />
     <Content Include="Views\Home\Detail.cshtml" />
     <Content Include="Views\Home\WeatherDisplay.cshtml" />
+    <Content Include="Views\Survey\FavoritesPage.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

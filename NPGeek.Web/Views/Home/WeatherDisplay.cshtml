@@ -13,18 +13,6 @@
 	{
 		<img src="~/Content/@(weather.Forecast).png" alt="Forecast" />
 	}
-	if (Session["convert"].ToString() == "fahr")
-	{
-		<p>@weather.Low</p>
-		<p>@weather.High</p>
-		<p>@weather.Forecast</p>
-	}
-	else
-	{
-		<p>@(((weather.Low) - 32) * 5/9)</p>
-		<p>@(((weather.High) - 32) * 5/9)</p>
-		<p>@weather.Forecast</p>
-	}
 
 	if (weather.Forecast == "snow")
 	{

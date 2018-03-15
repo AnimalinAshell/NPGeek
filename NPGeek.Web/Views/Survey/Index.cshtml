@@ -1,4 +1,4 @@
-﻿@model IList<NPGeek.Web.Models.SurveyModel>
+﻿@model NPGeek.Web.Models.SurveyModel
 
 @{
     ViewBag.Title = "Index";
@@ -6,12 +6,28 @@
 
 <h2>Index</h2>
 
-@foreach (var surveys in Model)
-{
-    <p>@surveys.ParkCode</p>
-    <p>@surveys.EmailAddress</p>
-    <p>@surveys.State</p>
-    <p>@surveys.ActivityLevel</p>
-}
+<form action="@Url.Action("FavoritesPage", "Survey")" method="post">
+	<select name="ParkCode">
+		<option value="CVNP">Cuyahoga Valley National Park</option>
+		<option value="ENP">Everglades National Park</option>
+		<option value="GCNP">Grand Canyon National Park</option>
+		<option value="GNP">Glacier National Park</option>
+		<option value="GSMNP">Great Smokey Mountains National Park</option>
+		<option value="GTNP">Grand Teton Nation Park</option>
+		<option value="MRNP">Mount Rainier National Park</option>
+		<option value="RMNP">Rocky Mountain National Park</option>
+		<option value="YNP">Yellowstone National Park</option>
+		<option value="YNP2">Yosemite National Park</option>
+	</select>
+	@Html.TextBoxFor(m => m.EmailAddress, new { placeholder = "Email Address.." })
+	@Html.TextBoxFor(m => m.State, new { placeholder = "State.." })
+	<select name="ActivityLevel">
+		<option value="active">Active</option>
+		<option value="inactive">Inactive</option>
+		<option value="sedentary">Sedentary</option>
+		<option value="extremelyactive">Extremely Active</option>
+	</select>
+	<button>Submit</button>
+</form>
 
 

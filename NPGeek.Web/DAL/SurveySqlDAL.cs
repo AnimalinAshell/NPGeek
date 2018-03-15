@@ -20,17 +20,21 @@ namespace NPGeek.Web.DAL
         {
             List<SurveyModel> survey = new List<SurveyModel>();
 
+            string query = "SELECT parkCode, COUNT(surveyId) as TotalSurvey FROM survey_result " +
+                           "GROUP BY parkCode " +
+                           "ORDER BY TotalSurvey DESC; ";
+           
             using (SqlConnection conn = new SqlConnection(connectionString))
             {
                 conn.Open();
 
-                SqlCommand cmd = new SqlCommand("SELECT * FROM park", conn);
+                SqlCommand cmd = new SqlCommand(query, conn);
 
                 SqlDataReader reader = cmd.ExecuteReader();
 
                 while (reader.Read())
                 {
-                    survey.Add(MapRowToSurvey(reader));
+                    survey.Add(MapRowToSurveyAnswer(reader));
                 }
             }
             return survey;
@@ -62,6 +66,14 @@ namespace NPGeek.Web.DAL
                 EmailAddress = Convert.ToString(reader["emailAddress"]),
                 State = Convert.ToString(reader["state"]),  
                 ActivityLevel = Convert.ToString(reader["activityLevel"])
+            };
+        }
+        private SurveyModel MapRowToSurveyAnswer(SqlDataReader reader)
+        {
+            return new SurveyModel()
+            {
+                ParkCode = Convert.ToString(reader["parkCode"]),
+                SurveyRank = Convert.ToInt32(reader["TotalSurvey"]) 
             };
         }
     }

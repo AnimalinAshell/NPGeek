@@ -11,5 +11,6 @@ namespace NPGeek.Web.Models
         public string EmailAddress { get; set; }
         public string State { get; set; }
         public string ActivityLevel { get; set; }
+        public int SurveyRank { get; set; }
     }
 }

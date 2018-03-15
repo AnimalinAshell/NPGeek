@@ -35,7 +35,5 @@ namespace NPGeek.Web.Controllers
             return View("FavoritesPage", list); // break here coe back here after lunch
         }
 
-
-
     }
 }
