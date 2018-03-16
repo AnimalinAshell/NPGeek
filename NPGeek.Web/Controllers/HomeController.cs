@@ -27,28 +27,30 @@ namespace NPGeek.Web.Controllers
         }
 
         public ActionResult Detail(string parkCode)
-        {
+        {   
             ParkModel model = dal.GetPark(parkCode);
+
             return View("Detail", model);
         }
 
         [HttpPost]
-        public ActionResult Detail(string tempChoice)
+        public ActionResult Detail(string id, string tempChoice)
         {
             Session["TempChoice"] = tempChoice;
-            return RedirectToAction("Detail");
+            return RedirectToAction("Detail", new { parkCode = id});
         }
     
 
         public ActionResult WeatherDisplay(string parkCode)
         {
             List<WeatherModel> weather = dalWeather.GetWeather(parkCode);
+            weather[0].TempPicker = GetCelFahFromSess();
             return PartialView(weather);
         }
 
-        private string CelFah(string tempChoice)
+        private string GetCelFahFromSess()
         {
-            tempChoice = "F";
+            string tempChoice = "F";
 
             if (Session["TempChoice"] == null)
             {
@@ -59,6 +61,8 @@ namespace NPGeek.Web.Controllers
             {
                 tempChoice = (string)Session["TempChoice"];
             }
+
+            return tempChoice;
             
         }
 

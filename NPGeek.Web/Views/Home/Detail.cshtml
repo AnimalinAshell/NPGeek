@@ -22,13 +22,15 @@
 <p>@Model.NumberOfAnimalSpecies</p>
 
 
-<form action="@Url.Action("Detail", "Home",)" method="post">
-        <input tyepe="radio" name="session" value="fah">Fahrenheit</input>
-        <button name="session" value="cel">Celsius</button>
+<form action="@Url.Action("Detail", "Home")" method="post">
+        <input type="radio" name="tempChoice" value="F"/>Fahrenheit
+        <input type="hidden" name="id" value="@Model.ParkCode" />
+        <input type="radio" name="tempChoice" value="C"/>Celsius
+    <button>Set Units</button>
 </form>
 
 
 
 <div>
-    @Html.Action("WeatherDisplay")
+    @Html.Action("WeatherDisplay", "Home", new { id = Model.ParkCode })
 </div>
