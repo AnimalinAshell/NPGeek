@@ -2,30 +2,39 @@
 @{
     ViewBag.Title = "Detail";
 }
-
 <h2>Detail</h2>
+<div class="detailcontainer">
+    <div class="detailsubcontainer">
+        <div class="detailpic">
+            <img class="picdetailpic" src="~/Content/@(Model.ParkCode).jpg" />
+        </div>
+        <div class="detailinfo">
+            <p>@Model.ParkName</p>
+            <p>Founded In:      @Model.YearFounded</p>
+            <p>Location:        @Model.State</p>
+            <p>Size:            @Model.Acreage acres</p>
+            <p>Elevation:       @Model.Elevation Ft. </p>
+            <p>Trail Length:    @Model.MilesOfTrail</p>
+            <p>Climate:         @Model.Climate</p>
+            <p>Species Count:   @Model.NumberOfAnimalSpecies</p>
+        </div>
+    </div> 
+    <div style="display:block">
+        <p>Annual Visitors: @Model.AnnualVisitorCount</p>
+        <p>Quote:           @Model.InspirationalQuote</p>
+        <p>By:              @Model.QuoteSource</p>
+        <p>Description:     @Model.ParkDescription</p>
+        <p>Fee:             $@Model.EntryFee</p>
+        <p>Campsites:       @Model.NumberOfCampsites</p>
 
-<img src="~/Content/@(Model.ParkCode).jpg" />
-<p>@Model.ParkName</p>
-<p>@Model.State</p>
-<p>@Model.Acreage</p>
-<p>@Model.Elevation</p>
-<p>@Model.MilesOfTrail</p>
-<p>@Model.NumberOfCampsites</p>
-<p>@Model.Climate</p>
-<p>@Model.YearFounded</p>
-<p>@Model.AnnualVisitorCount</p>
-<p>@Model.InspirationalQuote</p>
-<p>@Model.QuoteSource</p>
-<p>@Model.ParkDescription</p>
-<p>@Model.EntryFee</p>
-<p>@Model.NumberOfAnimalSpecies</p>
-
+    </div>
+</div>
+<hr />
 
 <form action="@Url.Action("Detail", "Home")" method="post">
-        <input type="radio" name="tempChoice" value="F"/>Fahrenheit
-        <input type="hidden" name="id" value="@Model.ParkCode" />
-        <input type="radio" name="tempChoice" value="C"/>Celsius
+    <input type="radio" name="tempChoice" value="F" />Fahrenheit
+    <input type="hidden" name="id" value="@Model.ParkCode" />
+    <input type="radio" name="tempChoice" value="C" />Celsius
     <button>Set Units</button>
 </form>
 

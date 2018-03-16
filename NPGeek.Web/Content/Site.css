@@ -15,3 +15,79 @@ select,
 textarea {
     max-width: 280px;
 }
+
+/*Home Index*/
+
+.layouthead img{
+    height: 100%;
+}
+
+.layouthead{
+    height: 100px;
+    background-color: #FFF;
+}
+
+div.container{
+    margin-bottom: 0px;
+}
+
+div.indexcontainer{
+    margin-top: 70px;
+}
+
+div.surveycontainer{
+    margin-top: 100px;
+}
+
+.indexptags{
+    padding: 0 !important;
+    margin: 0 !important;
+    display:inline-block;
+    width: inherit;
+}
+
+.indexptags2 {
+    display: inline-block;
+    width: 40%;
+    vertical-align: top;
+    text-align: justify;
+    margin-left: 20%;
+}
+
+.indexpic{
+    width: 100%;
+    height: auto;
+
+}
+
+p.parkname{
+    font-weight: bold;
+    font-family:cursive;
+    font-size:1.5em;
+}
+
+/* Detai */
+
+div.detailsubcontainer{
+    margin-top: 70px;
+    width: 100%;
+    height: auto;
+    
+}
+
+div.detailpic{
+    display: inline-block;
+    vertical-align: top;
+}
+
+img.picdetailpic{
+    width: 100%;
+    height: auto; 
+    
+}
+
+div.detailinfo {
+    display: inline-block;
+    vertical-align: top;
+}
+

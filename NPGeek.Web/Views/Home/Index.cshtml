@@ -4,14 +4,18 @@
 }
 
 <h2>HomePage</h2>
-
-@foreach (var park in Model)
-{
-	
-    <form action="@Url.Action("Detail")" method="get">
-        <input type="image" src="~/Content/@(park.ParkCode).jpg" value="@park.ParkCode" name="parkCode" />
-    </form>
-    <p>@park.ParkName</p>
-    <p>@park.ParkDescription</p>
-}
-
+<div class="indexcontainer">
+    @foreach (var park in Model)
+    { 
+    <div>
+        <form class="indexptags" action="@Url.Action("Detail")" method="get">
+            <input class="indexpic" type="image" src="~/Content/@(park.ParkCode).jpg" value="@park.ParkCode" name="parkCode" />
+        </form>
+        <div class="indexptags2">
+            <p class="parkname">@park.ParkName</p>
+            <p>@park.ParkDescription</p>
+        </div>
+    </div>
+    <hr />
+    }
+</div>
