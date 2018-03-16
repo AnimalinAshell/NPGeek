@@ -25,8 +25,17 @@ namespace NPGeek.Web.Controllers
         [HttpPost]
         public ActionResult Index(SurveyModel model)
         {
-            dal.SubmitSurvey(model);
-            return RedirectToAction("FavoritesPage");
+            if (ModelState.IsValid)
+            {
+                dal.SubmitSurvey(model);
+                return RedirectToAction("FavoritesPage");
+            }
+            else
+            {
+                return View("Index", model);
+            }
+            
+            //return RedirectToAction("FavoritesPage");
         }
 
         public ActionResult FavoritesPage()

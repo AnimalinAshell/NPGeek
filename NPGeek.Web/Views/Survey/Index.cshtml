@@ -8,6 +8,7 @@
 <div class="surveycontainer">
     <form action="@Url.Action("Index", "Survey")" method="post">
         <select name="ParkCode">
+            <option value="" selected="selected">Select a Park</option>
             <option value="CVNP">Cuyahoga Valley National Park</option>
             <option value="ENP">Everglades National Park</option>
             <option value="GCNP">Grand Canyon National Park</option>
@@ -19,8 +20,10 @@
             <option value="YNP">Yellowstone National Park</option>
             <option value="YNP2">Yosemite National Park</option>
         </select>
+        @Html.ValidationMessageFor(m => m.ParkCode)
 
         @Html.TextBoxFor(m => m.EmailAddress, new { placeholder = "Email Address.." })
+        @Html.ValidationMessageFor(m => m.EmailAddress)
         <select name="State">
             <option value="" selected="selected">Select a State</option>
             <option value="AL">Alabama</option>
@@ -76,6 +79,7 @@
             <option value="WY">Wyoming</option>
         </select>
         <select name="ActivityLevel">
+            <option value="" selected="selected">Select an Activity Level</option>
             <option value="active">Active</option>
             <option value="inactive">Inactive</option>
             <option value="sedentary">Sedentary</option>
@@ -85,3 +89,7 @@
     </form>
 </div>
 
+
+
+@Html.ValidationMessageFor(m => m.ParkName)
+@Html.ValidationMessageFor(m => m.State)
