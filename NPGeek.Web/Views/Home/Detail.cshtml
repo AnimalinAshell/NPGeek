@@ -9,35 +9,48 @@
             <img class="picdetailpic" src="~/Content/@(Model.ParkCode).jpg" />
         </div>
         <div class="detailinfo">
-            <p>@Model.ParkName</p>
-            <p>Founded In:      @Model.YearFounded</p>
-            <p>Location:        @Model.State</p>
-            <p>Size:            @Model.Acreage acres</p>
-            <p>Elevation:       @Model.Elevation Ft. </p>
-            <p>Trail Length:    @Model.MilesOfTrail</p>
-            <p>Climate:         @Model.Climate</p>
-            <p>Species Count:   @Model.NumberOfAnimalSpecies</p>
+            <p class="testthis">@Model.ParkName</p>
+            <div class="detailtitles" style="display: inline-block">
+                <p>Founded In:</p>
+                <p>Location:</p>
+                <p>Size:</p>
+                <p>Elevation:</p>
+                <p>Trail Length:</p>
+                <p>Climate:</p>
+                <p>Number of Species:</p>
+                <p>Annual Visitors:</p>
+                <p>Campsites:</p>
+                <p>Fee:</p>
+            </div>
+            <div class="detailtitles2" style="display: inline-block">
+                <p>@Model.YearFounded</p>
+                <p>@Model.State</p>
+                <p>@Model.Acreage acres</p>
+                <p>@Model.Elevation Ft. </p>
+                <p>@Model.MilesOfTrail</p>
+                <p>@Model.Climate</p>
+                <p>@Model.NumberOfAnimalSpecies</p>
+                <p>@Model.AnnualVisitorCount</p>
+                <p>$@Model.EntryFee</p>
+                <p>@Model.NumberOfCampsites</p>
+            </div>
         </div>
     </div> 
-    <div style="display:block">
-        <p>Annual Visitors: @Model.AnnualVisitorCount</p>
-        <p>Quote:           @Model.InspirationalQuote</p>
-        <p>By:              @Model.QuoteSource</p>
-        <p>Description:     @Model.ParkDescription</p>
-        <p>Fee:             $@Model.EntryFee</p>
-        <p>Campsites:       @Model.NumberOfCampsites</p>
-
+    <div class="quoteblock" style="display:block">        
+        <p class="quote">@Model.InspirationalQuote</p>
+        <p class="author">-@Model.QuoteSource</p>
+        <p class="description">@Model.ParkDescription</p>        
     </div>
 </div>
 <hr />
-
-<form action="@Url.Action("Detail", "Home")" method="post">
-    <input type="radio" name="tempChoice" value="F" />Fahrenheit
-    <input type="hidden" name="id" value="@Model.ParkCode" />
-    <input type="radio" name="tempChoice" value="C" />Celsius
-    <button>Set Units</button>
-</form>
-
+<div class="thebutton">
+    <form class="thebutton2" action="@Url.Action("Detail", "Home")" method="post">
+        <input type="radio" name="tempChoice" value="F" />Fahrenheit
+        <input type="hidden" name="id" value="@Model.ParkCode" />
+        <input type="radio" name="tempChoice" value="C" />Celsius
+        <button>Set Units</button>
+    </form>
+</div>
 
 
 <div>

@@ -66,7 +66,7 @@ p.parkname{
     font-size:1.5em;
 }
 
-/* Detai */
+/* Detail */
 
 div.detailsubcontainer{
     margin-top: 70px;
@@ -78,16 +78,111 @@ div.detailsubcontainer{
 div.detailpic{
     display: inline-block;
     vertical-align: top;
+    
 }
 
 img.picdetailpic{
     width: 100%;
     height: auto; 
+    border-radius: 50%;
+    border-color:blueviolet;
     
 }
 
 div.detailinfo {
+    
     display: inline-block;
     vertical-align: top;
+    width: auto;
+    margin-left: 180px;
 }
 
+div.detailtitles{
+   
+    
+}
+
+div.detailtitles2 {
+    margin-left: 100px;
+    text-align: right;
+    
+}
+
+
+
+
+
+p.testthis{
+    text-align: center;
+    font-size:larger;
+    font-weight: bolder;
+    font-family:cursive;
+}
+
+div.detailtitles p{
+    font-weight: bold;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+div.detailtitles2 p {
+    
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.quoteblock{
+    margin-top: 10px;
+    text-align: center;
+}
+
+.quote{
+    font-family: cursive;
+    text-align: center;
+    width: 500px;
+
+}
+
+.author{
+    font-size: smaller;
+    font-style:italic;
+    text-align: center;
+    width: 500px;
+}
+
+.description{
+    margin-top: 30px;
+    font-family:'Comic Sans MS';
+    text-align: center;
+}
+
+.thebutton{
+    text-align:center;
+    height: 100px;
+    background-color:aliceblue;
+    width: 30%;
+    margin-left: auto;
+    margin-right: auto;    
+    border-radius: 50%;
+    margin-bottom: 20px;
+}
+
+.thebutton2{
+    padding-top: 37px;
+}
+
+/*Weather View*/
+
+.weathercolumn{
+    display:inline-block;
+}
+
+.weatherpics{
+    height: 50%;
+}
+
+#help{
+    margin-left: auto;
+    margin-right:auto;
+    background-color:aliceblue ;
+}

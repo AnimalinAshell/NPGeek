@@ -1,59 +1,77 @@
 ﻿@model IList<NPGeek.Web.Models.WeatherModel>
+@{
+    ViewBag.Title = "WeatherDisplay";
+    int count = -1;
+}
+<table class="table-bordered" id="help">
+    <tr>
+        <td></td>
+        <td></td>
+        <td>Temperature</td>
+        <td>Weather Recommendations</td>
 
-<div>
+    </tr>
+
     @foreach (var weather in Model)
     {
 
-        if (weather.Forecast == "partly cloudy")
-        {
-            <img src="~/Content/partlyCloudy.png" alt="Forecast" />
-        }
-        else
-        {
-            <img src="~/Content/@(weather.Forecast).png" alt="Forecast" />
-        }
+        <tr>
+            <td>@DateTime.Now.AddDays(count += 1).ToShortDateString() </td>
+            <td>
+                @if (weather.Forecast == "partly cloudy")
+                {
+                    <img class="weatherpics" src="~/Content/partlyCloudy.png" alt="Forecast" />
+                }
+                else
+                {
+                    <img class="weatherpics" src="~/Content/@(weather.Forecast).png" alt="Forecast" />
+                }
+            </td>
+            <td>
+                @if (Model[0].TempPicker == "F")
+                {
+                    <p>High @weather.High F</p>
+                    <p>Low @weather.Low F</p>
+                }
+                else if (Model[0].TempPicker == "C")
+                {
+                    <p>High @(((weather.High) - 32) * 5 / 9) C</p>
+                    <p>Low @(((weather.Low) - 32) * 5 / 9) C </p>
+                }
+            </td>
+            <td>
+                @if (weather.Forecast == "snow")
+                {
+                    <p>Recommendation: Pack snowshoes</p>
+                }
+                else if (weather.Forecast == "rain")
+                {
+                    <p>Recommendation: Pack rain gear and waterproof shoes</p>
+                }
+                else if (weather.Forecast == "thunderstorms")
+                {
+                    <p>Recommendation: Seek shelter and avoid hiking on exposed ridges</p>
+                }
+                else if (weather.Forecast == "sunny")
+                {
+                    <p>Recommendation: Pack some sunblock</p>
+                }
 
-        if (Model[0].TempPicker == "F")
-        {
-            <p>High @weather.High F</p>
-            <p>Low @weather.Low F</p>
-        }
-        else if (Model[0].TempPicker == "C")
-        {
-            <p>High @(((weather.High) - 32) * 5/9) C</p>
-            <p>Low @(((weather.Low) - 32) * 5 / 9) C </p>
-        }
 
-        if (weather.Forecast == "snow")
-        {
-            <p>Recommendation: Pack snowshoes</p>
-        }
-        else if (weather.Forecast == "rain")
-        {
-            <p>Recommendation: Pack rain gear and waterproof shoes</p>
-        }
-        else if (weather.Forecast == "thunderstorms")
-        {
-            <p>Recommendation: Seek shelter and avoid hiking on exposed ridges</p>
-        }
-        else if (weather.Forecast == "sunny")
-        {
-            <p>Recommendation: Pack some sunblock</p>
-        }
+                @if (weather.High >= 75)
+                {
+                    <p>Recommendation: Bring an extra gallon of water</p>
+                }
 
-        if (weather.High >= 75)
-        {
-            <p>Recommendation: Bring an extra gallon of water</p>
-        }
-
-        if (Math.Abs(weather.High - weather.Low) > 20)
-        {
-            <p>Recommendation: Wear breathable layers</p>
-        }
-        if (weather.Low < 20)
-        {
-            <p>Recommendation: Be careful of extreme cold</p>
-        }
-
+            @if (Math.Abs(weather.High - weather.Low) > 20)
+            {
+                <p>Recommendation: Wear breathable layers</p>
+            }
+            @if (weather.Low < 20)
+            {
+                <p>Recommendation: Be careful of extreme cold</p>
+            }
+            </td>
+        </tr>
     }
-</div>
+</table>
