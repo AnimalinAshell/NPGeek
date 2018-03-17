@@ -35,10 +35,6 @@ div.indexcontainer{
     margin-top: 70px;
 }
 
-div.surveycontainer{
-    margin-top: 100px;
-}
-
 .indexptags{
     padding: 0 !important;
     margin: 0 !important;
@@ -166,8 +162,6 @@ div.detailtitles2 p {
     
 }
 
-
-
 .thebutton2{
     padding-top:0;
 }
@@ -185,4 +179,39 @@ div.detailtitles2 p {
 #help{
     margin-left: auto;
     margin-right:auto;    
+}
+
+/* Survey Page */
+div.mainSurveyContainer {
+	margin-top: 10em;
+}
+
+div.mainSurveyContainer h2 {
+	text-align: center;
+	font-size: 3em;
+}
+
+div.center {
+	display: inline-block;
+	margin: 0 auto;
+}
+div.surveyLabels {
+	width: 20vw;
+	display: inline-block;
+}
+div.surveycontainer {
+	width: 30vw;
+	display: inline-block;
+}
+div.surveycontainer select {
+	width: 100%;
+	margin-bottom: 1em;
+}
+div.surveycontainer .emailInput {
+	width: 100%;
+	margin-bottom: 1em;
+}
+div.surveycontainer button {
+	display: block;
+	margin: 0 auto;
 }
