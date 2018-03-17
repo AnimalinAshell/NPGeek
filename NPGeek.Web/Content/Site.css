@@ -10,9 +10,7 @@
 }
 
 /* Set width on the form input elements since they're 100% wide by default */
-input,
-select,
-textarea {
+input.indexpic {
     max-width: 280px;
 }
 
@@ -182,6 +180,9 @@ div.detailtitles2 p {
 }
 
 /* Survey Page */
+span.highlight {
+	color:darkred;
+}
 div.mainSurveyContainer {
 	margin-top: 10em;
 }
@@ -189,18 +190,28 @@ div.mainSurveyContainer {
 div.mainSurveyContainer h2 {
 	text-align: center;
 	font-size: 3em;
+	margin-bottom: 1.4em;
 }
 
 div.center {
 	display: inline-block;
-	margin: 0 auto;
+	background-color: #F5F5F5;
+	position: relative;
+	left: 50%;
+	transform: translateX(-50%);
+	padding: 2em;
+	border: 1px solid #79de6c;
 }
 div.surveyLabels {
 	width: 20vw;
 	display: inline-block;
+	vertical-align: top;
 }
-div.surveycontainer {
-	width: 30vw;
+div.surveyLabels p {
+	margin-bottom: 1.1em;
+}
+div .surveycontainer {
+	width: 20vw;
 	display: inline-block;
 }
 div.surveycontainer select {
@@ -214,4 +225,15 @@ div.surveycontainer .emailInput {
 div.surveycontainer button {
 	display: block;
 	margin: 0 auto;
+	background-color: white;
+	border: 2px black solid;
+}
+div.surveycontainer button:hover {
+	border: 2px solid #79de6c;
+}
+
+div.mainSurveyContainer h4 {
+	font-size: 2em;
+	text-align: center;
+	margin: 1em 0;
 }

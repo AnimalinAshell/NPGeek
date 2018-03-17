@@ -8,6 +8,7 @@ namespace NPGeek.Web.Models
 {
     public class SurveyModel
     {
+        [Required(ErrorMessage = "Must Select A Park")]
         public string ParkCode { get; set; }
         [Required(ErrorMessage = "Invalid Email")]
         [EmailAddress]
@@ -17,7 +18,6 @@ namespace NPGeek.Web.Models
         [Required(ErrorMessage = "Required Field")]
         public string ActivityLevel { get; set; }
         public int SurveyRank { get; set; }
-        [Required(ErrorMessage = "Required Field")]
         public string ParkName { get; set; }
     }
 }
