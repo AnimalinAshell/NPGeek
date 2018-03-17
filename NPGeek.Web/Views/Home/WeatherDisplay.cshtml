@@ -3,12 +3,13 @@
     ViewBag.Title = "WeatherDisplay";
     int count = -1;
 }
-<table class="table-bordered" id="help">
+<table class="table-bordered table-hover" id="help">
+    
     <tr>
-        <td></td>
-        <td></td>
-        <td>Temperature</td>
-        <td>Weather Recommendations</td>
+        <th class="weatherhead" style="width:70px"></th>
+        <th class="weatherhead" style="width:auto"></th>
+        <th class="weatherhead" style="width:100px">Temperature</th>
+        <th class="weatherhead" style="width:400px">Weather Recommendations</th>
 
     </tr>
 
@@ -30,13 +31,13 @@
             <td>
                 @if (Model[0].TempPicker == "F")
                 {
-                    <p>High @weather.High F</p>
-                    <p>Low @weather.Low F</p>
+                    <p>High: @weather.High &#176 F</p>
+                    <p>Low: @weather.Low &#176 F</p>
                 }
                 else if (Model[0].TempPicker == "C")
                 {
-                    <p>High @(((weather.High) - 32) * 5 / 9) C</p>
-                    <p>Low @(((weather.Low) - 32) * 5 / 9) C </p>
+                    <p>High: @(((weather.High) - 32) * 5 / 9)&#176 C</p>
+                    <p>Low: @(((weather.Low) - 32) * 5 / 9)&#176 C </p>
                 }
             </td>
             <td>
@@ -63,14 +64,14 @@
                     <p>Recommendation: Bring an extra gallon of water</p>
                 }
 
-            @if (Math.Abs(weather.High - weather.Low) > 20)
-            {
-                <p>Recommendation: Wear breathable layers</p>
-            }
-            @if (weather.Low < 20)
-            {
-                <p>Recommendation: Be careful of extreme cold</p>
-            }
+                @if (Math.Abs(weather.High - weather.Low) > 20)
+                {
+                    <p>Recommendation: Wear breathable layers</p>
+                }
+                @if (weather.Low < 20)
+                {
+                    <p>Recommendation: Be careful of extreme cold</p>
+                }
             </td>
         </tr>
     }

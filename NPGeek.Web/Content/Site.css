@@ -158,17 +158,18 @@ div.detailtitles2 p {
 
 .thebutton{
     text-align:center;
-    height: 100px;
-    background-color:aliceblue;
-    width: 30%;
+    height: 40px;
+    
+    width: 40%;
     margin-left: auto;
-    margin-right: auto;    
-    border-radius: 50%;
-    margin-bottom: 20px;
+    margin-right: auto;       
+    
 }
 
+
+
 .thebutton2{
-    padding-top: 37px;
+    padding-top:0;
 }
 
 /*Weather View*/
@@ -178,11 +179,10 @@ div.detailtitles2 p {
 }
 
 .weatherpics{
-    height: 50%;
+    height: 25%;
 }
 
 #help{
     margin-left: auto;
-    margin-right:auto;
-    background-color:aliceblue ;
+    margin-right:auto;    
 }
