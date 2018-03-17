@@ -1,14 +1,21 @@
 ﻿@model List<NPGeek.Web.Models.SurveyModel>
 @{
-    ViewBag.Title = "FavoritesPage";
+	ViewBag.Title = "FavoritesPage";
 }
 
-<h2>FavoritesPage</h2>
+<div class="mainFavoritesContainer">
+	<h2>FavoritesPage</h2>
+	
+	@foreach (var item in Model)
+	{
+		<div class="rankContainer">
+			<img src="~/Content/@(item.ParkCode).jpg" />
+			<div class="favoritesInfo">
+				<p class="favoritesParkName">@item.ParkName</p>
+				<p class="rank">Rank: @item.SurveyRank</p>
+			</div>
+		</div>
+	}
+</div>
 
-@foreach (var item in Model)
-{
-    <p>@item.ParkName</p>
-    <p>@item.SurveyRank</p>
-
-}
 

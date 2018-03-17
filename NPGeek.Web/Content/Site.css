@@ -237,3 +237,37 @@ div.mainSurveyContainer h4 {
 	text-align: center;
 	margin: 1em 0;
 }
+
+/* Favorites Page */
+div.mainFavoritesContainer {
+	margin-top: 10em;
+}
+div.mainFavoritesContainer h2 {
+	text-align: center;
+	font-size: 3em;
+	margin-bottom: 1.4em;
+}
+div.mainFavoritesContainer img {
+	width: 30vw;
+	height: auto;
+	margin-right: 2em;
+}
+div.rankContainer {
+	display: inline-block;
+	width: 70vw;
+	position: relative;
+	left: 50%;
+	transform: translateX(-50%);
+	margin-bottom: 2em;
+}
+div.mainFavoritesContainer p.favoritesParkName {
+	display: inline-block;
+	font-weight: bold;
+	font-size: 1.6em;
+}
+div.mainFavoritesContainer p.rank {
+	display: block;
+}
+div.favoritesInfo {
+	display: inline-block;
+}
