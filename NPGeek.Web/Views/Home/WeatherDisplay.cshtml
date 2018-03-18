@@ -16,7 +16,7 @@
     @foreach (var weather in Model)
     {
 
-        <tr>
+        <tr class="weatherrow">
             <td>@DateTime.Now.AddDays(count += 1).ToShortDateString() </td>
             <td>
                 @if (weather.Forecast == "partly cloudy")
@@ -31,46 +31,46 @@
             <td>
                 @if (Model[0].TempPicker == "F")
                 {
-                    <p>High: @weather.High &#176 F</p>
-                    <p>Low: @weather.Low &#176 F</p>
+                    <p class="wp">High: @weather.High &#176 F</p>
+                    <p class="wp">Low: @weather.Low &#176 F</p>
                 }
                 else if (Model[0].TempPicker == "C")
                 {
-                    <p>High: @(((weather.High) - 32) * 5 / 9)&#176 C</p>
-                    <p>Low: @(((weather.Low) - 32) * 5 / 9)&#176 C </p>
+                    <p class="wp">High: @(((weather.High) - 32) * 5 / 9)&#176 C</p>
+                    <p class="wp">Low: @(((weather.Low) - 32) * 5 / 9)&#176 C </p>
                 }
             </td>
             <td>
                 @if (weather.Forecast == "snow")
                 {
-                    <p>Recommendation: Pack snowshoes</p>
+                    <p class="wp">Recommendation: Pack snowshoes</p>
                 }
                 else if (weather.Forecast == "rain")
                 {
-                    <p>Recommendation: Pack rain gear and waterproof shoes</p>
+                    <p class="wp">Recommendation: Pack rain gear and waterproof shoes</p>
                 }
                 else if (weather.Forecast == "thunderstorms")
                 {
-                    <p>Recommendation: Seek shelter and avoid hiking on exposed ridges</p>
+                    <p class="wp">Recommendation: Seek shelter and avoid hiking on exposed ridges</p>
                 }
                 else if (weather.Forecast == "sunny")
                 {
-                    <p>Recommendation: Pack some sunblock</p>
+                    <p class="wp">Recommendation: Pack some sunblock</p>
                 }
 
 
                 @if (weather.High >= 75)
                 {
-                    <p>Recommendation: Bring an extra gallon of water</p>
+                    <p class="wp">Recommendation: Bring an extra gallon of water</p>
                 }
 
                 @if (Math.Abs(weather.High - weather.Low) > 20)
                 {
-                    <p>Recommendation: Wear breathable layers</p>
+                    <p class="wp">Recommendation: Wear breathable layers</p>
                 }
                 @if (weather.Low < 20)
                 {
-                    <p>Recommendation: Be careful of extreme cold</p>
+                    <p class="wp">Recommendation: Be careful of extreme cold</p>
                 }
             </td>
         </tr>

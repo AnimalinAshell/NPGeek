@@ -84,27 +84,25 @@ img.picdetailpic{
 }
 
 div.detailinfo {
-    
     display: inline-block;
     vertical-align: top;
     width: auto;
-    margin-left: 180px;
+    margin-left: 150px;
+    background-color: #F5F5F5;
+    margin-top:70px;
+    padding: 10px;
+    border: 1px solid #79de6c;
+    
 }
-
 div.detailtitles{
-   
     
 }
 
 div.detailtitles2 {
-    margin-left: 100px;
+    margin-left: 10px;
     text-align: right;
     
 }
-
-
-
-
 
 p.testthis{
     text-align: center;
@@ -125,9 +123,9 @@ div.detailtitles2 p {
     padding-bottom: 0;
 }
 
-.quoteblock{
-    margin-top: 10px;
+.quoteblock {
     text-align: center;
+    font-size:smaller;
 }
 
 .quote{
@@ -137,6 +135,18 @@ div.detailtitles2 p {
 
 }
 
+.author1 {
+    font-size: smaller;
+    font-style: italic;
+    text-align: center;
+    width: 500px;
+    padding-top: 3px;
+    padding-bottom:0;
+    margin-bottom:0;
+}
+
+
+
 .author{
     font-size: smaller;
     font-style:italic;
@@ -145,18 +155,31 @@ div.detailtitles2 p {
 }
 
 .description{
-    margin-top: 30px;
+    
     font-family:'Comic Sans MS';
     text-align: center;
 }
 
-.thebutton{
-    text-align:center;
-    height: 40px;
+.hrline1{
+    margin-top:0;
+    margin-bottom: 5px;
+}
+
+.hrline2 {
+    margin-top: 0;
+    margin-bottom: 5px;
+}
+
+
+.thebutton {
+    text-align: center;
+    height: 50px;
     
-    width: 40%;
+    width: 20%;
     margin-left: auto;
-    margin-right: auto;       
+    margin-right: auto;
+    padding-top: 10px;
+    
     
 }
 
@@ -171,12 +194,30 @@ div.detailtitles2 p {
 }
 
 .weatherpics{
-    height: 25%;
+    height: 20%;
 }
 
+.weatherhead{
+    text-align: center;
+}
+
+.weatherrow{
+    padding:0;
+    margin:0;
+}
+
+p.wp {
+    padding: 0;
+    margin: 0;
+}
 #help{
     margin-left: auto;
-    margin-right:auto;    
+    margin-right: auto;
+    background-color: #F5F5F5;
+    border: 1px solid #79de6c;
+    text-align:center;
+    font-size: smaller;
+    padding: 0;
 }
 
 /* Survey Page */

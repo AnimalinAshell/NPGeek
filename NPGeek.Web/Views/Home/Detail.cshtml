@@ -7,6 +7,8 @@
     <div class="detailsubcontainer">
         <div class="detailpic">
             <img class="picdetailpic" src="~/Content/@(Model.ParkCode).jpg" />
+            <p class="author1">@Model.InspirationalQuote</p>
+            <p class="author">-@Model.QuoteSource</p>
         </div>
         <div class="detailinfo">
             <p class="testthis">@Model.ParkName</p>
@@ -16,11 +18,6 @@
                 <p>Size:</p>
                 <p>Elevation:</p>
                 <p>Trail Length:</p>
-                <p>Climate:</p>
-                <p>Number of Species:</p>
-                <p>Annual Visitors:</p>
-                <p>Campsites:</p>
-                <p>Fee:</p>
             </div>
             <div class="detailtitles2" style="display: inline-block">
                 <p>@Model.YearFounded</p>
@@ -28,6 +25,15 @@
                 <p>@Model.Acreage acres</p>
                 <p>@Model.Elevation Ft. </p>
                 <p>@Model.MilesOfTrail</p>
+            </div>
+            <div class="detailtitles" style="display: inline-block">
+                <p>Climate:</p>
+                <p>Number of Species:</p>
+                <p>Annual Visitors:</p>
+                <p>Campsites:</p>
+                <p>Fee:</p>
+            </div>
+            <div class="detailtitles2" style="display: inline-block">
                 <p>@Model.Climate</p>
                 <p>@Model.NumberOfAnimalSpecies</p>
                 <p>@Model.AnnualVisitorCount</p>
@@ -35,14 +41,13 @@
                 <p>@Model.NumberOfCampsites</p>
             </div>
         </div>
-    </div> 
-    <div class="quoteblock" style="display:block">        
-        <p class="quote">@Model.InspirationalQuote</p>
-        <p class="author">-@Model.QuoteSource</p>
-        <p class="description">@Model.ParkDescription</p>        
     </div>
+    <hr class="hrline1" />
+    <div class="quoteblock" style="display:block">
+        <p class="description">@Model.ParkDescription</p>
+    </div>
+    <hr class="hrline2" />
 </div>
-<hr />
 <div class="thebutton">
     <form class="thebutton2" action="@Url.Action("Detail", "Home")" method="post">
         <input type="radio" name="tempChoice" value="F" />Fahrenheit
